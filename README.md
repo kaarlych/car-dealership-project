@@ -8,3 +8,5 @@ This project is about creating a program for car dealership company to automate 
 
 written mainly to exercise Hibernate ORM and for more advanced development in the future (as a good start base for more advance Spring Project)
 
+![](assets/images-for-readme/car-anime-retro.jpg)
+

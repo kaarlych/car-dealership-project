@@ -2,23 +2,22 @@ package pl.zajavka.business.management;
 
 public interface Keys {
 
-     enum InputDataGroup {
-        INIT,
-         BUY_FIRST_TIME,
-         SERVICE_REQUEST,
-         DO_THE_SERVICE, BUY_AGAIN
-     }
+    enum InputDataGroup {
+        BUY_FIRST_TIME,
+        BUY_AGAIN,
+        SERVICE_REQUEST,
+        DO_THE_SERVICE
+    }
 
-     enum Entity {
+    enum Domain {
         SALESMAN,
-         MECHANIC,
-         CAR,
-         SERVICE,
-         CUSTOMER,
-         PART
-     }
+        MECHANIC,
+        CAR,
+        CUSTOMER
+    }
 
-     enum Constants {
-         FINISHED, WHAT
-     }
+    enum Constants {
+        WHAT,
+        FINISHED
+    }
 }

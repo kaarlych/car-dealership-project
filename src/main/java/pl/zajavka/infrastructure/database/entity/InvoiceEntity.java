@@ -1,16 +1,29 @@
 package pl.zajavka.infrastructure.database.entity;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.OffsetDateTime;
 
 @Getter
 @Setter
 @EqualsAndHashCode(of = "invoiceId")
-@ToString(of = {"invoiceId", "invoiceNumber", "invoiceDate"})
+@ToString(of = {"invoiceId", "invoiceNumber", "dateTime"})
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,15 +32,15 @@ import java.time.OffsetDateTime;
 public class InvoiceEntity {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "invoice_id")
-    private Long invoiceId;
+    private Integer invoiceId;
 
     @Column(name = "invoice_number")
     private String invoiceNumber;
 
     @Column(name = "date_time")
-    private OffsetDateTime invoiceDate;
+    private OffsetDateTime dateTime;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_to_buy_id")
